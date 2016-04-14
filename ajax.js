@@ -3,7 +3,7 @@ $('#joshForm input').on('change', function(){
   var data = 'joshMood=' + chosen;
 
   $.ajax({
-    url: "gather.php",
+    url: "db_access.php",
     data: data,
     type: "GET",
     dataType: "json",
