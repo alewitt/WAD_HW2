@@ -15,10 +15,10 @@
             Choose Mood
           </legend>
           <?php
-            $num_selections = get_pix_count($conn);
-            $count = 1;
-            while($count <= $num_selections){
-              echo '<label class="radio"><input type="radio" name="joshMood" value="' . $count . '">' . get_name($conn, $count) . '</label>';
+            $num_selections = $pix_count;
+            $count = 0;
+            while($count <= $num_selections-1){
+              echo '<label class="radio"><input type="radio" name="joshMood" value="' . $count . '">' . get_name($conn, $count, $pix_count, $names) . '</label>';
               $count += 1;
             }
           ?>
