@@ -10,20 +10,24 @@ $(document).ready(function(){
       var num_selections = json.num_selections;
       while(count <= num_selections){
         var formEl = $('#joshForm');
+        var fieldEl = $('#selectionField');
         var inputEl = $(document.createElement("input"));
         var labelEl = $(document.createElement("label"));
-        formEl.append(labelEl);
-        labelEl.text(json.names[count-1]);
+        formEl.append(fieldEl);
+        fieldEl.append(labelEl);
+        labelEl.attr("class", "radio");
 
         labelEl.append(inputEl);
         inputEl.attr("type", "radio");
         inputEl.attr("name", "joshMood");
         inputEl.attr("value", count);
 
-        if(count !== 5){
-          var br = $(document.createElement("br"));
-          formEl.append(br);
-        }
+        labelEl.append(json.names[count-1]);
+
+        // if(count !== 5){
+        //   var br = $(document.createElement("br"));
+        //   formEl.append(br);
+        // }
         count += 1;
       }
     },
@@ -50,7 +54,7 @@ $(document).ready(function(){
           if(imgEl.length === 0){
             imgEl = $(document.createElement("img"));
             imgEl.insertAfter('#joshForm');
-            imgEl.attr("width", "400px");
+            imgEl.attr("class", "col-md-6 picture");
           }
           imgEl.attr("src", json.image);
         },
