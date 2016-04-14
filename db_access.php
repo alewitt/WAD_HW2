@@ -52,13 +52,13 @@ try {
     return $stmt->fetchColumn();
   }
 
-  $reply = [
-    'num_selections' => get_pix_count($conn),
-    'names' => get_names($conn),
-    'urls' => get_urls($conn)
-  ];
-
-  echo json_encode($reply);
+  // $reply = [
+  //   'num_selections' => get_pix_count($conn),
+  //   'names' => get_names($conn),
+  //   'urls' => get_urls($conn)
+  // ];
+  //
+  // echo json_encode($reply);
 
 } catch (PDOException $e) {
   echo 'ERROR ', $e->getMessage();

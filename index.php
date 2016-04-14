@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require('db_access.php'); ?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -13,6 +14,14 @@
           <legend>
             Choose Mood
           </legend>
+          <?php
+            $num_selections = get_pix_count($conn);
+            $count = 1;
+            while($count <= $num_selections){
+              echo '<label class="radio"><input type="radio" name="joshMood" value="' . $count . '">' . get_name($conn, $count) . '</label>';
+              $count += 1;
+            }
+          ?>
         </fieldset>
       </form>
     </div>
